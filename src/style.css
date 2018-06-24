@@ -1,13 +1,34 @@
-body{
+body {
     background-color: #F2F2F2;
-}
-#LogoLaboratoria{
-    margin-left:60px; 
-    margin-top:10px
-}
-
-.topnav {
     font-family: 'Open Sans', sans-serif;
+    color: #333333;
+}
+ 
+@media screen and (max-height: 450px) {
+    .sidenav {
+        padding-top: 15px;
+    }
+    .sidenav a {
+        font-size: 15px;
+    }
+}
+ 
+@media screen and (max-width: 900px) {
+    #cajaChile,
+    #cajaMexico,
+    #cajaPeru {
+        width: 100%;
+        margin-top: 40px;
+        margin-bottom: 0px;
+    }
+}
+ 
+#LogoLaboratoria {
+    margin-left: 60px;
+    margin-top: 10px
+}
+ 
+.topnav {
     background-color: #FFE521;
     position: fixed;
     top: 0;
@@ -17,18 +38,15 @@ body{
     z-index: 100;
     /* z-index es el orden de capas */
 }
-
+ 
 .menuSuperior {
-    font-family: 'Open Sans', sans-serif;
     font-weight: 700;
     overflow: hidden;
-    color: #333333;
     padding: 28px 40px;
     font-size: 15px;
 }
-
+ 
 .sidenav {
-    font-family: 'Open Sans', sans-serif;
     height: 100%;
     width: 0;
     position: fixed;
@@ -40,7 +58,7 @@ body{
     transition: 0.5s;
     padding-top: 60px;
 }
-
+ 
 .elipse {
     position: absolute;
     width: 45px;
@@ -50,15 +68,18 @@ body{
     top: 17px;
     background: #E0E0E0;
 }
-
+ 
+.elipse:hover {
+    background-color: #FFE521;
+}
+ 
 .fa-bars {
     position: absolute;
-    left: 29px;
+    left: 30px;
     top: 30px;
 }
-
+ 
 .sidenav .sidenavText {
-    font-family: 'Open Sans', sans-serif;
     padding: 8px 8px 8px 32px;
     text-decoration: none;
     font-size: 17px;
@@ -66,14 +87,13 @@ body{
     display: block;
     transition: 0.3s;
 }
-
+ 
 .sidenav .sidenavText:hover {
-    font-family: 'Open Sans', sans-serif;
     background-color: rgb(255, 229, 33);
     background-color: rgb(255, 229, 33, 0.2);
     color: #333333;
 }
-
+ 
 .sidenav .closebtn {
     color: #333333;
     text-decoration: none;
@@ -85,55 +105,30 @@ body{
     display: block;
     transition: 0.3s;
 }
-
+ 
 #main {
-    font-family: 'Open Sans', sans-serif;
     padding: 16px;
     background-color: white;
     width: 277px;
     height: 80px;
     float: left;
 }
-
-@media screen and (max-height: 450px) {
-    .sidenav {
-        padding-top: 15px;
-    }
-    .sidenav a {
-        font-size: 15px;
-    }
-}
-
-@media screen and (max-width: 900px) {
-    #cajaChile,
-    #cajaMexico,
-    #cajaPeru {
-        width: 100%;
-        margin-top: 40px;
-        margin-bottom: 0px;
-    }
-}
-
+ 
 #contenido {
     margin-top: 100px;
     margin-bottom: 10px;
 }
-
+ 
 #contenidoTres {
     margin-top: 80px;
 }
-
-.tablaAlumnas {
-    margin-top: 80px;
-}
-
+ 
 .dropdown {
-    margin-top: 80px;
+    margin-top: 50px;
 }
-
+ 
 .cajasSedes {
-    font-family: 'Open Sans', sans-serif;
-    margin: 100px 15px;
+    margin: 80px 15px;
     width: 250px;
     height: 220px;
     background: #FFFFFF;
@@ -142,9 +137,8 @@ body{
     justify-content: center;
     align-items: center;
 }
-
+ 
 .buttonSedes {
-    font-family: 'Open Sans', sans-serif;
     width: 118px;
     height: 36px;
     background-color: #FF009E;
@@ -152,75 +146,154 @@ body{
     box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.24), 0px 0px 2px rgba(0, 0, 0, 0.12);
     border-radius: 2px;
 }
-
+ 
 .buttonSedes:hover {
     box-shadow: 0px 8px 8px rgba(0, 0, 0, 0.24), 0px 0px 8px rgba(0, 0, 0, 0.12), 0px 2px 2px rgba(0, 0, 0, 0.24), 0px 0px 2px rgba(0, 0, 0, 0.12);
 }
-
+ 
 table,
 td {
     padding: 10px;
     align-items: center;
     text-align: center;
 }
-
+ 
 .titulosSecciones {
     font-size: 25px;
     color: #333333;
-    position: absolute;
+    margin-top: 20px;
 }
-
-.fa-map-marker,
+ 
+hr {
+    display: block;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+    margin-left: auto;
+    margin-right: auto;
+    border-style: inset;
+    border-width: 1px;
+}
+ 
+.fa-bars {
+    position: absolute;
+    left: 29px;
+    top: 30px;
+    font-size: 20px;
+}
+ 
+.fa-map-marker-alt,
 .fa-users,
 .fa-user {
     padding-right: 15px;
-    font-size:25px;
+    font-size: 25px;
 }
-
-
+ 
+.sidenav .fa-user,
+.fa-table,
+.fa-cog {
+    font-size: 15px;
+    padding-right: 15px;
+}
+ 
+.fa-angle-down {
+    padding-left: 50px;
+}
+ 
+.fa-times {
+    font-size: 20px;
+}
+ 
+.fa-times:hover {
+    color: #E0E0E0;
+}
+ 
+hr.lineaSeparadorUno {
+    border-top: 0.5px solid #BDBDBD;
+    margin-top: 10px;
+    margin-right: 10px;
+}
+ 
+ 
 /* dropdown */
-
-.dropbtn {
+ 
+.dropdown select {
+    border: none;
+    position: relative;
     width: 250px;
+    height: 50px;
     background-color: white;
     box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.24), 0px 8px 8px rgba(0, 0, 0, 0.12);
     color: #333333;
-    padding: 16px;
     font-size: 16px;
+}
+ 
+.dropdown p {
+    font-weight: 300;
+    font-size: 15px;
+    color: #333333;
+    text-transform: uppercase;
+}
+ 
+.buttonCohorts {
+    width: 148px;
+    height: 36px;
+    background-color: #FF009E;
+    color: white;
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.24), 0px 0px 2px rgba(0, 0, 0, 0.12);
+    border-radius: 2px;
+    margin-top: 40px;
+}
+ 
+.buttonCohorts:hover {
+    box-shadow: 0px 8px 8px rgba(0, 0, 0, 0.24), 0px 0px 8px rgba(0, 0, 0, 0.12), 0px 2px 2px rgba(0, 0, 0, 0.24), 0px 0px 2px rgba(0, 0, 0, 0.12);
+}
+ 
+ 
+/* Tabla */
+ 
+#tablaAlumnas {
+    margin-top: 30px;
+    font-size: 13px;
+}
+ 
+.cabeceraTabla {
+    background-color: white;
+    text-transform: uppercase;
+}
+/* Buscador */
+
+.buscador {
+    margin-top: 30px;
+}
+
+.buscador input {
+    width: 250px;
+    height: 36px;
+    background: #E0E0E0;
+    border-radius: 3px;
+    border: none;
+    outline: none;
+}
+
+.buscador input[type=text] {
+    padding: 6px;
+    font-size: 14px;
+    color: #828282;
+    border: none;
+}
+
+.buscador button {
+    width: 36px;
+    height: 36px;
+    background: #FF009E;
+    color: white;
+    border-radius: 3px;
     border: none;
     cursor: pointer;
-    text-align: left;
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.24), 0px 0px 2px rgba(0, 0, 0, 0.12);
+    outline: none;
 }
 
-.dropdown,
-.dropdown:hover .dropbtn {
-    position: relative;
-    display: inline-block;
-}
-
-.dropdown-content {
-    width: 250px;
-    display: none;
-    position: absolute;
-    background-color: #f9f9f9;
-    box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.24), 0px 8px 8px rgba(0, 0, 0, 0.12);
-    min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-    z-index: 1;
-    text-decoration: none;
-}
-
-.dropdown-content a {
-    color: #333333;
-    padding: 12px 16px;
-    text-decoration: none;
-    display: block;
-}
-
-.dropdown-content a:hover {
-    background: linear-gradient(90deg, #FF009E 0%, #56F89A 100%);
-}
-
-.dropdown:hover .dropdown-content {
-    display: block;
+.buscador button:hover {
+    box-shadow: 0px 8px 8px rgba(0, 0, 0, 0.24), 0px 0px 8px rgba(0, 0, 0, 0.12), 0px 2px 2px rgba(0, 0, 0, 0.24), 0px 0px 2px rgba(0, 0, 0, 0.12);
 }
