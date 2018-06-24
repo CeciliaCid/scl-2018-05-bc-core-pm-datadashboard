@@ -3,6 +3,7 @@ function openNav() {
     document.getElementById("contenido").style.marginLeft = "277px";
     document.getElementById("contenidoDos").style.marginLeft = "277px";
     document.getElementById("contenidoTres").style.marginLeft = "277px";
+
 }
 
 function closeNav() {
