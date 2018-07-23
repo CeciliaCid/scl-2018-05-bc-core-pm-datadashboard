@@ -56,17 +56,6 @@ function cargar(cohort) { // "cohort" esta en fetch para devolver a la tabla en 
                             quizzes.scoreUni++;// si existe el score lo cuenta
                             quizzes.scoreSum = quizzes.scoreSum + elemento.score;//suma el score total que tenga
                         }
-                        if (elemento.completed == 1)// cuenta los quizzes completados
-                            quizzes.completed++;
-                    }
-                    if (elemento.type == "read") {
-                        reads.total++;
-                        if (elemento.completed == 1)
-                            reads.completed++;
-
-                    }
-                    if (elemento.type == "practice") {
-                        exercises.total++;
                         if (elemento.completed == 1)
                             exercises.completed++;
                     }
@@ -91,27 +80,63 @@ function cargar(cohort) { // "cohort" esta en fetch para devolver a la tabla en 
             } else {
                 x.stats.quizzes.percent = parseInt((quizzes.completed / quizzes.total) * 100);
             }
-            
-            x.stats.quizzes.scoreSum = quizzes.scoreSum;
-            if (quizzes.scoreSum == 0) {
-                x.stats.quizzes.scoreAvg = 0;
-            } else {
-                x.stats.quizzes.scoreAvg = parseInt(quizzes.scoreSum / quizzes.scoreUni);//saca promedio
+            let scoreavg = scoresum / scorecom;
+
+
+
+            console.log("completado: " + quizCompleted + " - Total: " + quizTotal + " - Promedio: " + scoreavg);
+
+        }
+    )
+}
+
+function computeUsersStats(users, progress, cohorts) {
+    var usuario = {};
+    var usuarios = [];
+    var stats = {
+        percent: "",
+        exercises: {
+            total: "",
+            completed: "",
+            percent: ""
+        },
+        reads: {
+            total: "",
+            completed: "",
+            percent: ""
+        },
+        quizzes: {
+            total: "",
+            completed: "",
+            percent: "",
+            scoreSum: "",
+            scoreAvg: ""
+        }
+    };
+    usuario.id = users[0].id;
+    usuario.signupCohort = users[0].signupCohort;
+    usuario.timezone = users[0].timezone;
+    usuario.name = users[0].name;
+    usuario.locale = users[0].locale;
+    usuario.role = users[0].role;
+    usuario.stats = stats;
+    usuario.stats.percent = progress[users[0].id].intro.percent;
+    //llenar quiz //
+    let quizz = progress[users[0].id].intro.units;
+    let totalquizz = 0;
+    let complequizz = 0;
+    let scoresum = 0;
+    for (var uni in quizz) {
+        for (var par in quizz[uni]) {
+            let element = quizz[uni].parts[par];
+            if (element.type == "quiz") {
+                totalquizz++;
+                scoresum = scoresum + element.score;
+                if (element.completed == 1)
+                    complequizz++;
+
             }
 
-
-        } else {
-            x.stats.exercises.total = 0;
-            x.stats.exercises.completed = 0;
-            x.stats.exercises.percent = 0;
-            x.stats.reads.total = 0;
-            x.stats.reads.completed = 0;
-            x.stats.reads.percent = 0;
-            x.stats.quizzes.total = 0;
-            x.stats.quizzes.completed = 0;
-            x.stats.quizzes.scoreSum = 0;
-            x.stats.quizzes.scoreAvg = 0;
-            x.stats.percent = 0;
         }
         return x;//x al terminar de recorrer la data entrega valor usuarios
     });
@@ -152,12 +177,13 @@ function sortUsers(users,orderby,orderDirection)
         if(orderby == "Suma cuestionarios")
             users.sort((a,b) => b.stats.quizzes.scoreSum - a.stats.quizzes.scoreSum);    
     }
-    return users;
+    usuario.stats.quizzes.total = totalquizz;
+    usuario.stats.quizzes.completed =
+
+
+
+
+        console.log(usuario.stats.exercises.total);
+
 }
 
-function filterUsers(users,search)
-{
-    return users.filter(function(el){
-        return el.name.toLowerCase().indexOf(search.toLowerCase()) > -1;
-    })
-}
