@@ -1,13 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html>
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <title>Data Dashboard</title>
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800" rel="stylesheet">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt"
-        crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
     <link rel="icon" href="../src/img/favicon.png" type="image/png" sizes="16x16">
     <!-- Bootstrap CDN-->
     <!-- Latest compiled and minified CSS -->
@@ -27,22 +25,14 @@
         <div class="topnav">
             <div id="main">
                 <span onclick="openNav()">
-
-                <svg class="elipse"></svg>
-                <i class="fa fa-bars"></i>
-            </span>
+                    <svg class="elipse"></svg>
+                    <i class="fa fa-bars"></i>
+                </span>
                 <img id="LogoLaboratoria" src="img/LogoLaboratoria.png" width="182px">
             </div>
             <div id="topMenu" class="menuSuperior">
                 <a>Data Dashboard</a>
             </div>
-        </div>
-
-        <div id="mySidenav" class="sidenav">
-            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-            <a class="sidenavText" href="#">Nombre Usuario</a>
-            <a class="sidenavText" href="#">Data Dashboard</a>
-            <a class="sidenavText" href="#">Configuración</a>
         </div>
 
         <div id="mySidenav" class="sidenav">
@@ -147,9 +137,9 @@
                 <div class="row">
                     <div class="col-sm-12 d-flex align-self-left">
                         <div class="dropdown">
-                            <p>Selecciona un cohort</p>
+                            <p>Selecciona un cohort:</p>
                             <select name="cohorts" id="Menu_dropdown">
-
+ 
                                 <div>
                                     <option value="0">Seleccionar</option>
                                     <option value="lim-2018-03-pre-core-pw">Lim-2018-03 pre-core pw</option>
@@ -161,7 +151,41 @@
                     </div>
                 </div>
             </div>
-
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-sm-12 d-flex align-self-left">
+                        <div class="dropdown">
+                            <p>Ordenar por:</p>
+                            <div>
+                                <select id="order">
+                                    <option value="Nombre">Nombre</option>
+                                    <option value="Total">% Total</option>
+                                    <option value="Lecturas">% Lecturas</option>
+                                    <option value="Ejecicios">% Ejecicios</option>
+                                    <option value="Cuestionarios">% Cuestionarios</option>
+                                </select>
+                                <select id="orderby">
+                                    <option value="ASC">Ascendente</option>
+                                    <option value="DESC">Descendente</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-sm-12 d-flex align-self-left">
+                        <div class="dropdown">
+                            <p>Buscar por nombre: </p>
+                            <input type="text" id="buscador" />
+                            <div>
+                                <button class="buttonCohorts" id="botoncito" onclick="jsonss()">Cargar listado</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
         <div id="contenidoTres">
             <div class="container-fluid">
@@ -172,53 +196,27 @@
                         </div>
                     </div>
                 </div>
+                <hr class="lineaSeparadorUno">
             </div>
             <div class="container-fluid">
                 <div class="row">
-                    <div class="col-sm-12 d-flex align-self-left">
-                        <div class="dropdown">
-                            <p>Buscar Nombre : </p>
-                            <input type="text" id="buscador" />
-
-                            <div>
-                                <button class="buttonCohorts" id="botoncito" onclick="jsonss()">Cargar</button>
-                            </div>
-                            </select>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div id="contenidoTres">
-                <div class="container-fluid">
-                    <div class="row">
-                        <div class="col-sm-4 d-flex align-self-left">
-                            <div class="titulosSecciones">
-                                <i class="fa fa-user" style="font-size:25px;"></i>Listado alumnas
-                            </div>
-                        </div>
-                    </div>
-                    <hr class="lineaSeparadorUno">
-                </div>
-                <div class="container-fluid">
-                    <div class="row">
-                        <div class="col-12">
-                            <div id="cohorts" class="dropdownCohorts mx-auto d-flex align-self-center">
-                                <div class="table-responsive">
-                                    <table id=tablaAlumnas class="table table-hover">
-                                        <thead class="cabeceraTabla">
-                                            <tr>
-                                                <th>Nombre</th>
-                                                <th>% Lecturas</th>
-                                                <th>% Ejercicios</th>
-                                                <th>% Cuestionarios</th>
-                                                <th>Puntaje Cuestionarios</th>
-                                                <th>% Total</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody id="tbody">
-                                        </tbody>
-                                    </table>
-                                </div>
+                    <div class="col-12">
+                        <div id="cohorts" class="dropdownCohorts mx-auto d-flex align-self-center">
+                            <div class="table-responsive">
+                                <table id="tablaAlumnas" class="table table-hover">
+                                    <thead class="cabeceraTabla">
+                                        <tr>
+                                            <th>Nombre</th>
+                                            <th>% Lecturas</th>
+                                            <th>% Ejercicios</th>
+                                            <th>% Cuestionarios</th>
+                                            <th>Puntaje Cuestionarios</th>
+                                            <th>% Total</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="tbody">
+                                    </tbody>
+                                </table>
                             </div>
                         </div>
                     </div>
@@ -226,20 +224,11 @@
             </div>
         </div>
     </section>
- 
- 
- 
-    <footer>
- 
-    </footer>
- 
- 
- 
- 
- 
- 
+
     <script src="indexnav.js"></script>
-    <script type="text/javascript" src="main.js"></script>
+    <script src="main.js"></script>
+    <script src="data.js"></script>
 </body>
+
 
 </html>

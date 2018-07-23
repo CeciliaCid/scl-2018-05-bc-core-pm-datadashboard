@@ -4,12 +4,15 @@ body {
     color: #333333;
 }
 
-
-#LogoLaboratoria {
-    margin-left: 60px;
-    margin-top: 10px
+@media screen and (max-height: 450px) {
+    .sidenav {
+        padding-top: 15px;
+    }
+    .sidenav a {
+        font-size: 15px;
+    }
 }
- 
+
 @media screen and (max-width: 900px) {
     #cajaChile,
     #cajaMexico,
@@ -19,12 +22,12 @@ body {
         margin-bottom: 0px;
     }
 }
- 
+
 #LogoLaboratoria {
     margin-left: 60px;
     margin-top: 10px
 }
- 
+
 .topnav {
     background-color: #FFE521;
     position: fixed;
@@ -35,14 +38,15 @@ body {
     z-index: 100;
     /* z-index es el orden de capas */
 }
- 
+
 .menuSuperior {
     font-weight: 700;
     overflow: hidden;
-    padding: 28px 40px;
     font-size: 15px;
+    line-height: 80px;
+    padding-left: 30px;
 }
- 
+
 .sidenav {
     height: 100%;
     width: 0;
@@ -55,7 +59,7 @@ body {
     transition: 0.5s;
     padding-top: 60px;
 }
- 
+
 .elipse {
     position: absolute;
     width: 45px;
@@ -65,17 +69,17 @@ body {
     top: 17px;
     background: #E0E0E0;
 }
- 
+
 .elipse:hover {
     background-color: #FFE521;
 }
- 
+
 .fa-bars {
     position: absolute;
     left: 30px;
     top: 30px;
 }
- 
+
 .sidenav .sidenavText {
     padding: 8px 8px 8px 32px;
     text-decoration: none;
@@ -84,13 +88,13 @@ body {
     display: block;
     transition: 0.3s;
 }
- 
+
 .sidenav .sidenavText:hover {
     background-color: rgb(255, 229, 33);
     background-color: rgb(255, 229, 33, 0.2);
     color: #333333;
 }
- 
+
 .sidenav .closebtn {
     color: #333333;
     text-decoration: none;
@@ -102,7 +106,7 @@ body {
     display: block;
     transition: 0.3s;
 }
- 
+
 #main {
     padding: 16px;
     background-color: white;
@@ -110,21 +114,20 @@ body {
     height: 80px;
     float: left;
 }
- 
+
 #contenido {
-    margin-top: 100px;
     margin-top: 100px;
     margin-bottom: 10px;
 }
- 
+
 #contenidoTres {
     margin-top: 80px;
 }
- 
+
 .dropdown {
-    margin-top: 80px;
+    margin-top: 50px;
 }
- 
+
 .cajasSedes {
     margin: 80px 15px;
     width: 250px;
@@ -135,33 +138,33 @@ body {
     justify-content: center;
     align-items: center;
 }
- 
+
 .buttonSedes {
     width: 118px;
     height: 36px;
     background-color: #FF009E;
     color: white;
     box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.24), 0px 0px 2px rgba(0, 0, 0, 0.12);
-    border-radius: 2px;
+    border-radius: 3px;
 }
- 
+
 .buttonSedes:hover {
     box-shadow: 0px 8px 8px rgba(0, 0, 0, 0.24), 0px 0px 8px rgba(0, 0, 0, 0.12), 0px 2px 2px rgba(0, 0, 0, 0.24), 0px 0px 2px rgba(0, 0, 0, 0.12);
 }
- 
+
 table,
 td {
     padding: 10px;
     align-items: center;
     text-align: center;
 }
- 
+
 .titulosSecciones {
     font-size: 25px;
     color: #333333;
     margin-top: 20px;
 }
- 
+
 hr {
     display: block;
     margin-top: 0.5em;
@@ -171,47 +174,52 @@ hr {
     border-style: inset;
     border-width: 1px;
 }
- 
+
 .fa-bars {
     position: absolute;
+    left: 29px;
+    top: 30px;
+    font-size: 20px;
 }
- 
+
 .fa-map-marker-alt,
 .fa-users,
 .fa-user {
     padding-right: 15px;
     font-size: 25px;
 }
- 
+
 .sidenav .fa-user,
 .fa-table,
 .fa-cog {
     font-size: 15px;
     padding-right: 15px;
 }
- 
-.fa-angle-down {
-    padding-left: 50px;
-}
- 
+
 .fa-times {
     font-size: 20px;
 }
- 
+
 .fa-times:hover {
     color: #E0E0E0;
 }
- 
+
+.fa-search {
+    font-size: 15px;
+    align-self: center;
+}
+
 hr.lineaSeparadorUno {
     border-top: 0.5px solid #BDBDBD;
     margin-top: 10px;
     margin-right: 10px;
 }
- 
- 
+
+
 /* dropdown */
- 
+
 .dropdown select {
+    margin-right: 15px;
     border: none;
     position: relative;
     width: 250px;
@@ -220,47 +228,48 @@ hr.lineaSeparadorUno {
     box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.24), 0px 8px 8px rgba(0, 0, 0, 0.12);
     color: #333333;
     font-size: 16px;
+    outline: none;
 }
- 
+
 .dropdown p {
     font-weight: 300;
     font-size: 15px;
     color: #333333;
     text-transform: uppercase;
 }
- 
+
 .buttonCohorts {
     width: 148px;
     height: 36px;
     background-color: #FF009E;
     color: white;
     box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.24), 0px 0px 2px rgba(0, 0, 0, 0.12);
-    border-radius: 2px;
-    margin-top: 40px;
+    border-radius: 3px;
+    margin-top: 20px;
 }
- 
+
 .buttonCohorts:hover {
     box-shadow: 0px 8px 8px rgba(0, 0, 0, 0.24), 0px 0px 8px rgba(0, 0, 0, 0.12), 0px 2px 2px rgba(0, 0, 0, 0.24), 0px 0px 2px rgba(0, 0, 0, 0.12);
 }
- 
- 
+
+
 /* Tabla */
- 
+
 #tablaAlumnas {
-    margin-top: 30px;
+    margin-top: 20px;
     font-size: 13px;
 }
- 
+
 .cabeceraTabla {
     background-color: white;
     text-transform: uppercase;
 }
-/* Buscador */
 
+
+/* Buscador 
 .buscador {
     margin-top: 30px;
 }
-
 .buscador input {
     width: 250px;
     height: 36px;
@@ -269,14 +278,12 @@ hr.lineaSeparadorUno {
     border: none;
     outline: none;
 }
-
 .buscador input[type=text] {
     padding: 6px;
     font-size: 14px;
     color: #828282;
     border: none;
 }
-
 .buscador button {
     width: 36px;
     height: 36px;
@@ -288,7 +295,7 @@ hr.lineaSeparadorUno {
     box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.24), 0px 0px 2px rgba(0, 0, 0, 0.12);
     outline: none;
 }
-
-.dropdown:hover .dropdown-content {
-    display: block;
+.buscador button:hover {
+    box-shadow: 0px 8px 8px rgba(0, 0, 0, 0.24), 0px 0px 8px rgba(0, 0, 0, 0.12), 0px 2px 2px rgba(0, 0, 0, 0.24), 0px 0px 2px rgba(0, 0, 0, 0.12);
 }
+*/
