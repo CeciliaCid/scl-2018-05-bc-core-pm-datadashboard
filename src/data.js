@@ -1,4 +1,4 @@
-function cargar(cohort) { // "cohort" esta en fetch para devolver a la tabla en html
+window.cargar = (cohort) => { // "cohort" esta en fetch para devolver a la tabla en html
   Promise.all([
     fetch('../data/cohorts/' + cohort + '/users.json'),
     fetch('../data/cohorts/' + cohort + '/progress.json'),
@@ -27,7 +27,7 @@ function cargar(cohort) { // "cohort" esta en fetch para devolver a la tabla en 
   });
 }
 
-function computeUsersStats(users, progress, cohorts) { //  funcion que se encarga de devolver el obj usuario
+window.computeUsersStats = (users, progress, courses) => { //  funcion que se encarga de devolver el obj usuario
   var usuarios = [];
   usuarios = users.map(function(x) { // x corresponde a cada dato dentro del array.orderDirectionorderDirection
     x.stats = {
@@ -133,7 +133,7 @@ function computeUsersStats(users, progress, cohorts) { //  funcion que se encarg
   return usuarios;
 }
 
-function sortUsers(users, orderby, orderDirection) {
+window.sortUsers = (users, orderby, orderDirection)=> {
   if (orderDirection === 'ASC') {
     if (orderby === 'Nombre')
       users.sort((aaa, bbb) => aaa.name.localeCompare(bbb.name));
@@ -164,8 +164,11 @@ function sortUsers(users, orderby, orderDirection) {
   return users;
 }
 
-function filterUsers(users, search) {
+window.filterUsers = (users, search) => {
   return users.filter(function(el) {
     return el.name.toLowerCase().indexOf(search.toLowerCase()) > -1;
   });
+}
+window.processCohortData = (options) => {
+
 }
